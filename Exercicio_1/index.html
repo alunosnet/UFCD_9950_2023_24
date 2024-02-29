@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calcular()
+        {
+            let p1 = Number(document.getElementById("produto_1").value);
+            let p2 = Number(document.getElementById("produto_2").value);
+            let p3 = Number(document.getElementById("produto_3").value);
+            let soma = p1 + p2 + p3;
+            let dinheiro = Number(document.getElementById("dinheiro").value);
+            let troco = dinheiro - soma;
+            
+            document.getElementById("resultado").innerHTML="Tem a pagar " + soma + "<br>Recebe de troco "+troco;
+
+            if (troco<0)
+                alert("Não tem dinheiro suficiente!");
+            else
+                alert("Pode comprar mais!");
+            mais_caro();
+        }
+        function mais_caro()
+        {
+            //recolher os preços dos produtos
+            let p1 = Number(document.getElementById("produto_1").value);
+            let p2 = Number(document.getElementById("produto_2").value);
+            let p3 = Number(document.getElementById("produto_3").value);
+            let maior;
+            //p1 > p2 e p1 > p3
+            if (p1>p2 && p1>p3)
+                maior=p1;
+            //p2 > p1 e p2 > p3
+            if (p2>p1 && p2>p3)
+                maior=p2;
+            //p3 > p1 e p3 > p2
+            if (p3>p1 && p3>p2)
+                maior=p3;
+            //Mostrar o maior
+            document.getElementById("resultado").innerHTML += "O produto mais caro custou "+maior;
+        }
+    </script>
+</head>
+<body>
+    <h1>Lista de compras</h1>
+    <label for="produto_1">Preço produto:</label>
+    <input id="produto_1" type="number" />
+    <br>
+    <label for="produto_2">Preço produto:</label>
+    <input id="produto_2" type="number" />
+    <br>
+    <label for="produto_3">Preço produto:</label>
+    <input id="produto_3" type="number" />
+    <br>
+    <label for="dinheiro">Dinheiro:</label>
+    <input id="dinheiro" type="number" />
+    <br>
+    <button onclick="calcular()">Calcular o preço total</button>
+    <div id="resultado">Preço total:</div>
+    <!--<button onclick="mais_caro()">Preço mais elevado</button>-->
+</body>
+</html>

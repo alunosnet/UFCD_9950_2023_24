@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Programação de sistemas</h1>
+    <script>
+        //alert("olá mundo"); 
+        //console.log("olá mundo");
+        function somar()
+        {
+            //define a variável x e guarda o valor da input com id input_x
+            let x=Number(document.getElementById("input_x").value);
+            let y=Number(document.getElementById("input_y").value);
+            //define a variável soma e guarda o resultado da soma de x com y
+            let soma = x + y;
+            //alert(soma);
+            //mostrar o resultado na div
+            let mensagem="A soma de "+x+" com "+y+" é igual a "+soma;
+            document.getElementById("resultado").innerText=mensagem;
+        }
+        function subtrair()
+        {
+            //define a variável x e guarda o valor da input com id input_x
+            let x=Number(document.getElementById("input_x").value);
+            let y=Number(document.getElementById("input_y").value);
+            //define a variável resultado e guarda o resultado da subtração de x com y
+            let resultado = x - y;
+            //alert(soma);
+            //mostrar o resultado na div
+            let mensagem="A subtração de "+x+" com "+y+" é igual a "+resultado;
+            document.getElementById("resultado").innerText=mensagem;
+        }
+        function multiplicar()
+        {
+            //define a variável x e guarda o valor da input com id input_x
+            let x=Number(document.getElementById("input_x").value);
+            let y=Number(document.getElementById("input_y").value);
+            //define a variável resultado e guarda o resultado da multiplicação de x com y
+            let resultado = x * y;
+            //alert(soma);
+            //mostrar o resultado na div
+            let mensagem="A multiplicação de "+x+" com "+y+" é igual a "+resultado;
+            document.getElementById("resultado").innerText=mensagem;
+        }
+        function dividir()
+        {
+            //define a variável x e guarda o valor da input com id input_x
+            let x=Number(document.getElementById("input_x").value);
+            let y=Number(document.getElementById("input_y").value);
+            //define a variável soma e guarda o resultado da soma de x com y
+            let resultado = x / y;
+            //alert(soma);
+            //mostrar o resultado na div
+            let mensagem="A divisão de "+x+" com "+y+" é igual a "+resultado;
+            document.getElementById("resultado").innerText=mensagem;
+        }
+    </script>
+    x:<input type="text" id="input_x">
+    <br>
+    y:<input type="number" id="input_y">
+    <br>
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <br>
+    <div id="resultado"></div>
+</body>
+</html>
