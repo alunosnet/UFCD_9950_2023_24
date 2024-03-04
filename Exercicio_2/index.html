@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function CalcularNota(d1,d2,d3)
+        {
+            let nota = d1*0.3 + d2*0.4 + d3*0.3;
+            return nota;
+        }
+        function calcularnota()
+        {
+            //recolher as notas do form para variáveis
+            let d1 = Number(document.getElementById("d1").value);
+            let d2 = Number(document.getElementById("d2").value);
+            let d3 = Number(document.getElementById("d3").value);
+            //calcular a nota
+            let nota = CalcularNota(d1,d2,d3);
+            //mostrar a nota
+            document.getElementById("resultado").innerHTML = "A nota final é "+nota;
+            verifica_aprovado(nota);
+        }
+        function verifica_aprovado(nota)
+        {
+            let div=document.getElementById("resultado");
+            if (nota>=10)
+            {
+                alert("Aprovado");
+                div.style.color="green";
+            }
+            else
+            {
+                alert("Reprovado");
+                div.style.color="red";
+            }
+        }
+    </script>
+</head>
+<body>
+    Dominio 1:<input type="number" id="d1"/>
+    <br>
+    Dominio 2:<input type="number" id="d2" />
+    <br>
+    Dominio 3:<input type="number" id="d3"/>
+    <br>
+    <button onclick="calcularnota()">Calcular nota</button>
+    <div id="resultado"></div>
+</body>
+</html>
