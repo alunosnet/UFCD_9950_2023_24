@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict"
+        function calcular()
+        {
+            let n1 = Number(document.getElementById("n1").value);
+            let n2 = Number(document.getElementById("n2").value);
+            let n3 = Number(document.getElementById("n3").value);
+            //contar quantos alunos têm positiva
+            let positivas=0;
+            if (n1>=10 && n2>=10 && n3>=10)
+            {
+                positivas=3;
+            }
+            else
+            {
+                if (n1>=10)
+                {
+                    positivas=1;
+                }
+                if (n2>=10)
+                {
+                    positivas=positivas+1;
+                }
+                if (n3>=10)
+                {
+                    positivas=positivas+1;
+                }
+            }
+            //calcular a média das notas
+            let media=(n1+n2+n3)/3;
+            //v2
+            //let soma=n1+n2+n3;
+            //media=soma/3;
+            //mostrar os resultados
+            document.getElementById("resultado").innerHTML="Alunos com positiva: "+positivas+"<br>Média: "+media;
+        }
+    </script>
+</head>
+<body>
+    Aluno 1:<input type="number" id="n1">
+    <br>
+    Aluno 2:<input type="number" id="n2">
+    <br>
+    Aluno 3:<input type="number" id="n3">
+    <br>
+    <div id="resultado"></div>
+    <br>
+    <button onclick="calcular()">Positivas</button>
+</body>
+</html>
