@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Segunda página</h1>
+    <label id="lbl_soma"></label>
+    <script>
+        //ler os parâmetros x e y da url
+        let x = new URLSearchParams(window.location.search).get("x");
+        let y = new URLSearchParams(window.location.search).get("y");
+        x=Number(x);
+        y=Number(y);
+        //calcular a sua soma
+        let soma = x + y;
+        //mostrar o resultado no label
+        document.getElementById("lbl_soma").innerHTML=soma;
+    </script>
+</body>
+</html>

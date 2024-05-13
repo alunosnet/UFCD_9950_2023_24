@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h1>Pizzaria Luigi</h1>
+    <h2>Menu</h2>
+    <select id="menu"></select>
+    <div id="detalhes">
+        <div id="detalhes_pizza">
+            <span id="nome"></span><br>
+            <span id="preco"></span><br>
+            <span id="tamanho"></span><br>
+            <img src="" alt="Foto da pizza" id="foto">
+        </div>
+        <button onclick="adicionar_carrinho()">Adicionar ao carrinho</button>
+        <button onclick="fechar_detalhes()">X</button>
+    </div>
+    <h2>Os seus produtos</h2>
+    <select id="carrinho"></select>
+    <button onclick="checkout()">Checkout</button>
+    <footer id="aviso">
+        Este site utiliza cookies
+        <button onclick="aceitar_cookies()">Ok</button>
+    </footer>
+    <script src="codigo.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="txt_numero1">Primeiro número:</label>
+        <input type="number" id="txt_numero1">
+    </div>
+    <div>
+        <label for="txt_numero2">Segundo número:</label>
+        <input type="number" id="txt_numero2">
+    </div>
+    <button onclick="segunda_pagina()">Segunda página</button>
+    <script>
+        function segunda_pagina()
+        {
+            let x = document.getElementById("txt_numero1").value;
+            let y = document.getElementById("txt_numero2").value;
+            let url="segunda.html?x=" + x + "&y=" + y;
+            window.location.href=url;
+        }
+    </script>
+</body>
+</html>
